@@ -7,5 +7,3 @@
     * Eclipse -> perspective -> Tomcat
       *  select the Tomcat version
       *  fill in the Tomcat home
-      *  
-テスト

@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h2>Business day calculationボリューム</h2>
+<h2>Business day calculationボリュームtest</h2>
 
 <form action=BusinessDayServlet method=post>
 Start day<input type=text name=startDate id=startDate><p>
