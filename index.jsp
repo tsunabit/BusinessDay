@@ -10,8 +10,8 @@
 <link rel=stylesheet href=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/cupertino/jquery-ui.css>
 <title>Business day</title>
 </head>
-<body>
 
+<body>
 <h2>Business day calculation</h2>
 
 <form action=BusinessDayServlet method=post>

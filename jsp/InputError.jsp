@@ -15,8 +15,10 @@ String errorMsg = "";
 //String errorMsg = request.getAttribute("Input").toString();
 if ((request.getAttribute("InputError").toString()).equals("Start")) {
 	errorMsg = "開始日エラーです。入力を確認してください。";
-}else {
+}else if((request.getAttribute("InputError").toString()).equals("End")) {
 	errorMsg = "終了日エラーです。入力を確認してください。";
+}else {
+	errorMsg = "整合性エラーです。開始日、終了日の入力の妥当性を確認してください。";
 }
 %>
 <%= errorMsg %>

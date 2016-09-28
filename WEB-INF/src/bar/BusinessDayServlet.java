@@ -29,15 +29,14 @@ public class BusinessDayServlet extends HttpServlet {
 		Date endDate = null;
 		
 		try {
-			if(request.getParameter("startDate").equals("")) {
-				System.out.println("error start");
-				
+			Validation vali = new Validation();
+			//check the form input
+			if(!vali.checkKaramoji(request.getParameter("startDate"))) {
 				request.setAttribute("InputError", "Start");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
 				dispatcher.forward(request, response);
 				return;
-			}else if(request.getParameter("endDate").equals("")) {
-				System.out.println("error end");
+			}else if(!vali.checkKaramoji(request.getParameter("endDate"))) {
 				request.setAttribute("InputError", "End");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
 				dispatcher.forward(request, response);
@@ -51,6 +50,13 @@ public class BusinessDayServlet extends HttpServlet {
 			endDate   = sdf.parse(request.getParameter("endDate"));
 			System.out.println("endDate = " + endDate);
 			
+			//check the form input DateeSoukan
+			if(!vali.checkDateeSoukan(startDate, endDate)) {
+				request.setAttribute("InputError", "SoukanCheck");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
 			
 			//1970/01/01 00:00:00 GMTからの経過ミリ秒数に変換
 			long dateTimeStart = startDate.getTime();
