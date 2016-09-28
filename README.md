@@ -1,5 +1,5 @@
 # BusinessDay
-* install he Tomcat
+* install the Tomcat
     * http://tomcat.apache.org/
 * install the Tomcat plugin from Eclipse marketplace
     * Eclipse -> Help -> Eclipse market place  -> serch the "Tomcat plugin"
