@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h2>Input Error</h2>
+<h2 style="color: red">Input Error</h2>
 
 <%
 String errorMsg = "";
@@ -21,7 +21,10 @@ if ((request.getAttribute("InputError").toString()).equals("Start")) {
 	errorMsg = "整合性エラーです。開始日、終了日の入力の妥当性を確認してください。";
 }
 %>
+
+<dev style="color: red">
 <%= errorMsg %>
+</dev>
 
 </body>
 
