@@ -22,7 +22,7 @@ if ((request.getAttribute("InputError").toString()).equals("Start")) {
 }
 %>
 
-<dev style="color: green">
+<dev style="color: red">
 <%= errorMsg %>
 </dev>
 
