@@ -23,9 +23,9 @@ if ((request.getAttribute("InputError").toString()).equals("Start")) {
 %>
 
 
-<dev style="color: red">
+<div style="color: red">
 <%= errorMsg %>
-</dev>
+</div>
 
 
 </body>
