@@ -2,7 +2,8 @@
  * 
  */
 $.datepicker.setDefaults({
-	dateFormat : 'yy年mm月dd日',
+	//dateFormat : 'yy年mm月dd日',
+	dateFormat : 'yy-mm-dd',
 	changeYear : true,
 	changeMonth: true,
 	showOn     : "both",

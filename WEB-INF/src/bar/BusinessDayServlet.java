@@ -1,9 +1,7 @@
 package bar;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,9 +22,7 @@ public class BusinessDayServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
-		Date startDate = null;
-		Date endDate = null;
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
 		try {
 			Validation vali = new Validation();
@@ -42,37 +38,38 @@ public class BusinessDayServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			}
+			//check the form input DateeSoukan
+//			if(!vali.checkDateeSoukan(startDate, endDate)) {
+//				request.setAttribute("InputError", "SoukanCheck");
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
+//				dispatcher.forward(request, response);
+//				return;
+//			}
 			
 			
 			//---------------------
-			startDate = sdf.parse(request.getParameter("startDate"));
-			System.out.println("startDate = " + startDate);
-			endDate   = sdf.parse(request.getParameter("endDate"));
-			System.out.println("endDate = " + endDate);
+			LocalDate start = LocalDate.parse(request.getParameter("startDate"));
+			LocalDate end = LocalDate.parse(request.getParameter("endDate"));
 			
-			//check the form input DateeSoukan
-			if(!vali.checkDateeSoukan(startDate, endDate)) {
-				request.setAttribute("InputError", "SoukanCheck");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
-				dispatcher.forward(request, response);
-				return;
+			int count = 0;
+			while(end.compareTo(start) >= 0) {
+				if(!start.getDayOfWeek().toString().equals("SUNDAY") && !start.getDayOfWeek().toString().equals("SATURDAY")) {
+					count = count + 1;
+				}
+				start = start.plusDays(1);
+//				System.out.println("***start*** = " + start);
 			}
-			
-			//1970/01/01 00:00:00 GMTからの経過ミリ秒数に変換
-			long dateTimeStart = startDate.getTime();
-			long dateTimeEnd   = endDate.getTime();
-			
-			//HACK:
-			//取得したミリ秒の差を日数に変更
-			long dayDiff = ( dateTimeEnd - dateTimeStart  ) / (1000 * 60 * 60 * 24 ) + 1;
-			Long ln = new Long(dayDiff);
-			request.setAttribute("dayDiff", ln);
+			System.out.println("***count*** = " + count);
+			request.setAttribute("dayDiff", count);
 			
 			//取得した日数の総時間を計算
-			long totalOperatingTime = dayDiff * 8;
+			long totalOperatingTime = count * 8;
 			request.setAttribute("totalOperatingTime", totalOperatingTime);
 			
-		} catch (ParseException e) {
+			
+			
+			
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
