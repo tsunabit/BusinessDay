@@ -22,8 +22,6 @@ public class BusinessDayServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		
 		try {
 			Validation vali = new Validation();
 			//check the form input
@@ -38,26 +36,18 @@ public class BusinessDayServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			}
-			//check the form input DateeSoukan
-//			if(!vali.checkDateeSoukan(startDate, endDate)) {
-//				request.setAttribute("InputError", "SoukanCheck");
-//				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
-//				dispatcher.forward(request, response);
-//				return;
-//			}
 			
-			
-			//---------------------
-			LocalDate start = LocalDate.parse(request.getParameter("startDate"));
-			LocalDate end = LocalDate.parse(request.getParameter("endDate"));
+			//開始日と終了日をDate型へ変換する
+			LocalDate startDate = LocalDate.parse(request.getParameter("startDate"));
+			LocalDate endDate = LocalDate.parse(request.getParameter("endDate"));
 			
 			int count = 0;
-			while(end.compareTo(start) >= 0) {
-				if(!start.getDayOfWeek().toString().equals("SUNDAY") && !start.getDayOfWeek().toString().equals("SATURDAY")) {
+			while(endDate.compareTo(startDate) >= 0) {
+				if(!startDate.getDayOfWeek().toString().equals("SUNDAY") && 
+				   !startDate.getDayOfWeek().toString().equals("SATURDAY")) {
 					count = count + 1;
 				}
-				start = start.plusDays(1);
-//				System.out.println("***start*** = " + start);
+				startDate = startDate.plusDays(1);
 			}
 			System.out.println("***count*** = " + count);
 			request.setAttribute("dayDiff", count);
@@ -65,9 +55,6 @@ public class BusinessDayServlet extends HttpServlet {
 			//取得した日数の総時間を計算
 			long totalOperatingTime = count * 8;
 			request.setAttribute("totalOperatingTime", totalOperatingTime);
-			
-			
-			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
