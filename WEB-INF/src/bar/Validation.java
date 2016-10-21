@@ -1,10 +1,14 @@
 package bar;
 
 import java.util.Date;
+import org.apache.log4j.Logger;
 
 public class Validation {
 	
 	public boolean checkKaramoji(String strInput) {
+		final Logger logger = Logger.getLogger (Validation.class);
+		logger.error("aaaa");
+		
 		if(strInput.equals("")) {
 			System.out.println("error start");
 			return false;
