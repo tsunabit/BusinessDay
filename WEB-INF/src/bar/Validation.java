@@ -7,7 +7,7 @@ public class Validation {
 	
 	public boolean checkKaramoji(String strInput) {
 		final Logger logger = Logger.getLogger (Validation.class);
-		logger.error("aaaa");
+		logger.error("ggg");
 		
 		if(strInput.equals("")) {
 			System.out.println("error start");
