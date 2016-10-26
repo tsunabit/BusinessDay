@@ -43,6 +43,7 @@ public class BusinessDayServlet extends HttpServlet {
 			
 			int count = 0;
 			while(endDate.compareTo(startDate) >= 0) {
+				//土曜日と日曜日をskipして日数をカウント
 				if(!startDate.getDayOfWeek().toString().equals("SUNDAY") && 
 				   !startDate.getDayOfWeek().toString().equals("SATURDAY")) {
 					count = count + 1;
@@ -59,7 +60,6 @@ public class BusinessDayServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/Result.jsp");
 		dispatcher.forward(request, response);
 	}
