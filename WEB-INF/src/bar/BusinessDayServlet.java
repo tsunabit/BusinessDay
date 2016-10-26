@@ -2,14 +2,19 @@ package bar;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 
 public class BusinessDayServlet extends HttpServlet {
+	final Logger logger = Logger.getLogger (Validation.class);
 	/**
 	 * 
 	 */
@@ -42,15 +47,21 @@ public class BusinessDayServlet extends HttpServlet {
 			LocalDate endDate = LocalDate.parse(request.getParameter("endDate"));
 			
 			int count = 0;
+			ArrayList<String> arrayWkd = new ArrayList<String>();
+			
 			while(endDate.compareTo(startDate) >= 0) {
 				//土曜日と日曜日をskipして日数をカウント
 				if(!startDate.getDayOfWeek().toString().equals("SUNDAY") && 
 				   !startDate.getDayOfWeek().toString().equals("SATURDAY")) {
 					count = count + 1;
+				}else {
+					logger.trace("skip = " + startDate.toString() + " " + startDate.getDayOfWeek().toString());
+					arrayWkd.add(startDate.toString());
 				}
 				startDate = startDate.plusDays(1);
 			}
 			request.setAttribute("dayDiff", count);
+			request.setAttribute("arrayWkd", arrayWkd);
 			
 			//取得した日数の総時間を計算
 			long totalOperatingTime = count * 8;
