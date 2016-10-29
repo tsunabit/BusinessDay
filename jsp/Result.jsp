@@ -28,9 +28,8 @@
 ArrayList<String> arrayWkd = (ArrayList<String>)request.getAttribute("arrayWkd");
 String skip = "";
 for(Iterator<String> iter = arrayWkd.iterator(); iter.hasNext(); ){
-    out.println(iter.next());
+    out.println(iter.next() + "<br>");
 }
-
 %>
 
 </body>

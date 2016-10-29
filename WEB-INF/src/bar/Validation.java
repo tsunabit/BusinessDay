@@ -8,7 +8,7 @@ public class Validation {
 	public boolean checkKaramoji(String strInput) {
 		
 		if(strInput.equals("")) {
-			logger.error("strInputが空文字");
+			logger.error("strInput is nullstring");
 			return false;
 		}
 		return true;
