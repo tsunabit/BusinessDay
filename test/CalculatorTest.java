@@ -44,6 +44,19 @@ public class CalculatorTest {
 		
 	}
 	
+	@Test
+	public void divideMethodTest7waru7() {
+		//SetUp
+		Calculator calc = new Calculator();
+		double expected = 1.0;
+		//Exercise
+		double actual = calc.divide(7, 7);
+		//Verify
+		assertThat(actual, is(expected));
+		//tear down
+		
+	}
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void divideMethodTestwaru0() {
 		//SetUp
