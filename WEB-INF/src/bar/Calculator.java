@@ -12,7 +12,7 @@ public class Calculator {
 			throw new IllegalArgumentException("divide by zero");
 		}
 		
-		return (double)x / (double)y;
+		return (double)x / (double)y;		
 	}
 	
 	
