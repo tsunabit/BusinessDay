@@ -41,7 +41,6 @@ public class CalculatorTest {
 		//Verify
 		assertThat(actual, is(expected));
 		//tear down
-		
 	}
 	
 	@Test
@@ -54,8 +53,6 @@ public class CalculatorTest {
 		//Verify
 		assertThat(actual, is(expected));
 		//tear down
-		
-		
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
