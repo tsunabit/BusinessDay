@@ -44,6 +44,8 @@ public class BusinessDayServlet extends HttpServlet {
 				return;
 			}
 			
+			logger.trace("input startDate : " + LocalDate.parse(request.getParameter("startDate")));
+			logger.trace("input endDate   : " + LocalDate.parse(request.getParameter("endDate")));
 			//開始日と終了日をDate型へ変換する
 			LocalDate startDate = LocalDate.parse(request.getParameter("startDate"));
 			LocalDate endDate = LocalDate.parse(request.getParameter("endDate"));
