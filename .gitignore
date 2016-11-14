@@ -8,7 +8,7 @@ Thumbs.db
 *.war
 *.ear
 #libファイルを含める(!以降のパターン文字列が示すファイル or ディレクトリを無視しない)
-!lib
+!**lib
 
 # Eclipse
 .metadata
