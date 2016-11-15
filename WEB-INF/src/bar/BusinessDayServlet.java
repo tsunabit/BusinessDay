@@ -67,7 +67,6 @@ public class BusinessDayServlet extends HttpServlet {
 			request.setAttribute("dayDiff", count);
 			request.setAttribute("arrayWkd", arrayWkd);
 			
-			
 			//取得した日数の総時間を計算
 			Calculator cal = new Calculator();
 			int totalOperatingTime = cal.multiply(count, 8);
