@@ -64,7 +64,14 @@ public class BusinessDayServlet extends HttpServlet {
 				}
 				startDate = startDate.plusDays(1);
 			}
+			logger.trace("Business day count = " + count);
 			request.setAttribute("dayDiff", count);
+			
+			StringBuilder buff = new StringBuilder();
+			for(String skip : arrayWkd){
+				buff.append(skip + ",");
+			}
+			logger.trace("skip = " + buff.toString());
 			request.setAttribute("arrayWkd", arrayWkd);
 			
 			//取得した日数の総時間を計算
