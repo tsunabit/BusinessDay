@@ -23,7 +23,7 @@ public class BusinessDayServlet extends HttpServlet {
 	public void init() throws ServletException {
 		// Nothing
 	}
-
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -36,19 +36,6 @@ public class BusinessDayServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			}else if(!vali.checkNullString("endDate", request.getParameter("endDate"))){
-				request.setAttribute("InputError", "End");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}
-			
-			
-			if(!vali.checkKaramoji(request.getParameter("startDate"))) {
-				request.setAttribute("InputError", "Start");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}else if(!vali.checkKaramoji(request.getParameter("endDate"))) {
 				request.setAttribute("InputError", "End");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
 				dispatcher.forward(request, response);

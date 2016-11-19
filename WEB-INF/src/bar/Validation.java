@@ -13,12 +13,4 @@ public class Validation {
 		return true;
 	}
 	
-	public boolean checkKaramoji(String strInput) {
-		
-		if(strInput.equals("")) {
-			logger.error("strInput is nullstring");
-			return false;
-		}
-		return true;
-	}
 }
