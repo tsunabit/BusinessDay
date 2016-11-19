@@ -27,8 +27,6 @@ public class BusinessDayServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-//		GoogleCalendar calendarQuickstart = new GoogleCalendar();
-		
 		try {
 			Validation vali = new Validation();
 			//check the form input
