@@ -2,6 +2,7 @@ package bar;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -29,7 +30,7 @@ public class BusinessDayServlet extends HttpServlet {
 		
 		try {
 			Validation vali = new Validation();
-			//check the form input
+			//check the null String about form input
 			if(!vali.checkNullString("startDate", request.getParameter("startDate"))){
 				request.setAttribute("InputError", "Start");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
@@ -79,7 +80,9 @@ public class BusinessDayServlet extends HttpServlet {
 			int totalOperatingTime = cal.multiply(count, 8);
 			request.setAttribute("totalOperatingTime", totalOperatingTime);
 			
-		} catch (Exception e) {
+		}catch (DateTimeParseException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
