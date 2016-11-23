@@ -49,7 +49,7 @@ public class BusinessDayServlet extends HttpServlet {
 			logger.trace("input endDate   : " + LocalDate.parse(request.getParameter("endDate")));
 			
 			int count = 0;
-			ArrayList<String> arrayWkd = new ArrayList<String>();
+			ArrayList<String> arrayWeekend = new ArrayList<String>();
 			
 			while(endDate.compareTo(startDate) >= 0) {
 				//土曜日と日曜日をskipして日数をカウント
@@ -58,7 +58,7 @@ public class BusinessDayServlet extends HttpServlet {
 					count = count + 1;
 				}else {
 					logger.trace("skip = " + startDate.toString() + " " + startDate.getDayOfWeek().toString());
-					arrayWkd.add(startDate.toString());
+					arrayWeekend.add(startDate.toString() + " " + startDate.getDayOfWeek().toString());
 				}
 				startDate = startDate.plusDays(1);
 			}
@@ -67,11 +67,11 @@ public class BusinessDayServlet extends HttpServlet {
 			logger.trace("Business day count = " + count);
 			
 			StringBuilder buff = new StringBuilder();
-			for(String skip : arrayWkd){
+			for(String skip : arrayWeekend){
 				buff.append(skip + ",");
 			}
 			
-			request.setAttribute("arrayWkd", arrayWkd);
+			request.setAttribute("arrayWkd", arrayWeekend);
 			logger.trace("skip = " + buff.toString());
 			
 			//取得した日数の総時間を計算
