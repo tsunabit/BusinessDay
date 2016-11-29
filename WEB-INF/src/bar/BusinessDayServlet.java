@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-
 
 public class BusinessDayServlet extends HttpServlet {
 	final Logger logger = Logger.getLogger (Validation.class);
@@ -41,6 +39,12 @@ public class BusinessDayServlet extends HttpServlet {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
 				dispatcher.forward(request, response);
 				return;
+			}
+			
+			if(vali.checkInputPattern("startDate", request.getParameter("startDate"))) {
+				System.out.println("成功");
+			}else {
+				System.out.println("失敗");
 			}
 			
 			//開始日と終了日をDate型へ変換する
