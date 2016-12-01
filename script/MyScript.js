@@ -2,6 +2,7 @@
  * 
  */
 $.datepicker.setDefaults({
+	//RFC3339形式の日付を指定
 	//dateFormat : 'yy年mm月dd日',
 	dateFormat : 'yy-mm-dd',
 	changeYear : true,
