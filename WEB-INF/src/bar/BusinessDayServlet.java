@@ -53,7 +53,6 @@ public class BusinessDayServlet extends HttpServlet {
 				return;
 			}
 			
-			
 			//開始日と終了日をDate型へ変換する
 			LocalDate startDate = LocalDate.parse(request.getParameter("startDate"));
 			logger.trace("input startDate : " + LocalDate.parse(request.getParameter("startDate")));
@@ -92,10 +91,11 @@ public class BusinessDayServlet extends HttpServlet {
 			request.setAttribute("totalOperatingTime", totalOperatingTime);
 			
 		}catch (DateTimeParseException e) {
-			e.printStackTrace();
+			logger.fatal(e.getMessage());
+			logger.fatal(e.getStackTrace());
 		}catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.fatal(e.getMessage());
+			logger.fatal(e.getStackTrace());
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/Result.jsp");
 		dispatcher.forward(request, response);
