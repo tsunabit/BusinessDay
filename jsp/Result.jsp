@@ -28,7 +28,7 @@
 ArrayList<String> arrayWkd = (ArrayList<String>)request.getAttribute("arrayWkd");
 String skip = "";
 for(Iterator<String> iter = arrayWkd.iterator(); iter.hasNext(); ){
-    out.println(iter.next() + "<br>");
+    out.println("<font color=\"red\">" + iter.next() + "<font><br>");
 }
 %>
 
