@@ -1,6 +1,9 @@
 /**
  * 
  */
+
+console.log("script start");
+
 $.datepicker.setDefaults({
 	//RFC3339形式の日付を指定
 	//dateFormat : 'yy年mm月dd日',
@@ -25,3 +28,4 @@ $('#startDate').datepicker({
 $('#endDate').datepicker({
 });
 
+console.log("script end");
