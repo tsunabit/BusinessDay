@@ -41,17 +41,19 @@ public class BusinessDayServlet extends HttpServlet {
 				return;
 			}
 			
-			if(!vali.checkInputPattern("startDate", request.getParameter("startDate"))) {
-				request.setAttribute("InputError", "FormatError");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
-				dispatcher.forward(request, response);
-				return;
-			}else if(!vali.checkInputPattern("startDate", request.getParameter("endDate"))) {
+			if(!vali.checkInputPattern("startDate", request.getParameter("startDate")) || 
+					!vali.checkInputPattern("startDate", request.getParameter("endDate"))) {
 				request.setAttribute("InputError", "FormatError");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
 				dispatcher.forward(request, response);
 				return;
 			}
+//			}else if(!vali.checkInputPattern("startDate", request.getParameter("endDate"))) {
+//				request.setAttribute("InputError", "FormatError");
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/InputError.jsp");
+//				dispatcher.forward(request, response);
+//				return;
+//			}
 			
 			//開始日と終了日をDate型へ変換する
 			LocalDate startDate = LocalDate.parse(request.getParameter("startDate"));
