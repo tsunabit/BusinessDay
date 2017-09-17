@@ -15,7 +15,7 @@
 <body>
 <h2>Business day calculation</h2>
 
-開始日、終了日を入力して営業日数と稼働時間を計算します。
+開始日、終了日を入力して営業日数と稼働時間を計算<br><br>
 
 <form action=BusinessDayServlet method=post>
 Start day<input type=text name=startDate id=startDate><p>
@@ -24,8 +24,6 @@ End day  <input type=text name=endDate id=endDate><p>
 <input type=submit value=submit>
 <input type=reset value=reset>
 </form>
-
-
 
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js></script>
