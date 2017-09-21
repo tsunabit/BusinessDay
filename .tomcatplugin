@@ -6,7 +6,7 @@
     <reloadable>true</reloadable>
     <redirectLogger>false</redirectLogger>
     <updateXml>true</updateXml>
-    <warLocation></warLocation>
+    <warLocation>/Users/aa352872/Box Sync/01.Eclipse/01.workspaceforGitHub/BusinessDay/webapps/aaa.war</warLocation>
     <extraInfo></extraInfo>
     <mavenClasspath>false</mavenClasspath>
     <webPath>/BusinessDay</webPath>
