@@ -2,7 +2,7 @@
  * 
  */
 
-console.log("script start");
+//console.log("script start");
 
 $.datepicker.setDefaults({
 	//RFC3339形式の日付を指定
@@ -28,4 +28,4 @@ $('#startDate').datepicker({
 $('#endDate').datepicker({
 });
 
-console.log("script end");
+//console.log("script end");
