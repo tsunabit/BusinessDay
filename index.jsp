@@ -18,10 +18,10 @@
 
 <form action=BusinessDayServlet method=post>
 Start day<input type=text name=startDate id=startDate><p>
-End day  <input type=text name=endDate id=endDate><p>
+End day  <input type=text name=endDate   id=endDate><p>
 
 <input type=submit value=submit>
-<input type=reset value=reset>
+<input type=reset  value=reset>
 </form>
 
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script>
