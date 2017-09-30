@@ -7,7 +7,10 @@
 <head>
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <meta http-equiv=Content-Type content=text/html; charset=UTF-8>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js></script>
 <link rel=stylesheet href=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/cupertino/jquery-ui.css>
+<script type=text/javascript src=script/MyScript.js></script>
 
 <title>Business day</title>
 </head>
@@ -23,10 +26,6 @@ End day  <input type=text name=endDate   id=endDate><p>
 <input type=submit value=submit>
 <input type=reset  value=reset>
 </form>
-
-<script src=https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script>
-<script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js></script>
-<script type=text/javascript src=script/MyScript.js></script>
 
 </body>
 </html>
