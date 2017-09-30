@@ -18,7 +18,9 @@ public class Validation {
 	
 	public boolean checkInputPattern(String keyWord , String strInput) {
         //判定するパターンを生成
-		Pattern p = Pattern.compile("^[0-9]{4}+-[0-9]{2}+-[0-9]{2}+");
+		//Pattern p = Pattern.compile("^[0-9]{4}+-[0-9]{2}+-[0-9]{2}+");
+		//正規表現に末尾($)を追加し数字2桁で終わるよう修正
+		Pattern p = Pattern.compile("^[0-9]{4}+-[0-9]{2}+-[0-9]{2}+$");
         Matcher m = p.matcher(strInput);
         
         if(m.find()) {
