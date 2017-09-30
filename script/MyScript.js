@@ -1,6 +1,7 @@
 /**
  * 
  */
+//JQuery UI
 $(function() {
 	//jQuery UI Datepicker.JQuery UIのカレンダー機能.
 	$.datepicker.setDefaults({
@@ -31,5 +32,21 @@ $(function() {
             $('#startDate').datepicker('option', option, selectedDate);
 		}
 	});
+});
+
+//validation
+$(function() {
+	$('input[name=startDate').bind('blur' , function() {
+		if($(this).val() == ''){
+			$('form #startDate').html('input error');
+			$('form #startDate').css('color' , '#f00');
+		}
+	})
+	$('input[name=endDate').bind('blur' , function() {
+		if($(this).val() == ''){
+			$('form #endDate').html('input error');
+			$('form #endDate').css('color' , '#f00');
+		}
+	})
 });
 
