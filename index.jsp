@@ -7,6 +7,7 @@
 <head>
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <meta http-equiv=Content-Type content=text/html; charset=UTF-8>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js></script>
 <link rel=stylesheet href=https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/cupertino/jquery-ui.css>
@@ -21,7 +22,8 @@
 
 <form action=BusinessDayServlet method=post id=form>
 Start day<input type=text name=startDate id=startDate><p id='startDate'></p>
-End day  <input type=text name=endDate   id=endDate  ><p id='endDate'></p>
+
+End day  <input type=text name=endDate   id=endDate  ><p id='endDate'></p>
 
 <input type=submit value=submit>
 <input type=reset  value=reset>

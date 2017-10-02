@@ -38,13 +38,18 @@ $(function() {
 $(function() {
 	$('input[name=startDate').bind('blur' , function() {
 		if($(this).val() == ''){
-			$('form #startDate').html('input error');
+			//errorクラスを追加
+			$(this).addClass('error');
+			$('form #startDate').html('zzz input error');
 			$('form #startDate').css('color' , '#f00');
 		}
 	})
+	
 	$('input[name=endDate').bind('blur' , function() {
 		if($(this).val() == ''){
-			$('form #endDate').html('input error');
+			//errorクラスを追加
+			$(this).addClass('error');
+			$('form #endDate').html('endDate input error');
 			$('form #endDate').css('color' , '#f00');
 		}
 	})
