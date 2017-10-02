@@ -40,8 +40,9 @@ $(function() {
 		if($(this).val() == ''){
 			//errorクラスを追加
 			$(this).addClass('error');
-			$('form #startDate').html('zzz input error');
-			$('form #startDate').css('color' , '#f00');
+			//$('form #startDate').html('zzz input error');
+			$('form > #startDateError').html('zzz input error');
+			$('form > #startDateError').css('color' , '#f00');
 		}
 	})
 	
@@ -49,8 +50,8 @@ $(function() {
 		if($(this).val() == ''){
 			//errorクラスを追加
 			$(this).addClass('error');
-			$('form #endDate').html('endDate input error');
-			$('form #endDate').css('color' , '#f00');
+			$('form > #endDateError').html('endDate input error');
+			$('form > #endDateError').css('color' , '#f00');
 		}
 	})
 });

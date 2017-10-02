@@ -21,9 +21,8 @@
 開始日、終了日を入力して営業日数と稼働時間を計算<br><br>
 
 <form action=BusinessDayServlet method=post id=form>
-Start day<input type=text name=startDate id=startDate><p id='startDate'></p>
-
-End day  <input type=text name=endDate   id=endDate  ><p id='endDate'></p>
+Start day<input type=text name=startDate id=startDate><p id='startDateError'></p>
+End day  <input type=text name=endDate   id=endDate  ><p id='endDateError'></p>
 
 <input type=submit value=submit>
 <input type=reset  value=reset>
