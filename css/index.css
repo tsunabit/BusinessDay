@@ -1,6 +1,10 @@
 @CHARSET "UTF-8";
 
 input.error {
-	background-color:#ff0000;
+	background-color: #ff0000;
+	/* color: #f00; */
+}
+
+.error {
 	color: #f00;
 }

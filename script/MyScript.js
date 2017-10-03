@@ -36,23 +36,34 @@ $(function() {
 
 //validation
 $(function() {
-	$('input[name=startDate').bind('blur' , function() {
+	$('input[name=startDate]').bind('blur' , function() {
 		if($(this).val() == ''){
 			//errorクラスを追加
-			$(this).addClass('error');
-			//$('form #startDate').html('zzz input error');
-			$('form > #startDateError').html('zzz input error');
-			$('form > #startDateError').css('color' , '#f00');
+			//$(this).addClass('error');
+			//$('form > #startDateError').html('Start day input error').css('color' , '#f00');
+			$(this).addClass('error').parent().append('<p class="error">※この項目は必ず入力してください</p>');
 		}
 	})
+	.bind('focus' , function() {
+		if($(this).next() !== false){
+			//要素内全ての「兄弟」要素からclass="error"を削除
+			$(this).removeClass('error').siblings().remove('.error');
+		}
+	});
 	
-	$('input[name=endDate').bind('blur' , function() {
+	$('input[name=endDate]').bind('blur' , function() {
 		if($(this).val() == ''){
 			//errorクラスを追加
-			$(this).addClass('error');
-			$('form > #endDateError').html('endDate input error');
-			$('form > #endDateError').css('color' , '#f00');
+			//$(this).addClass('error');
+			//$('form > #endDateError').html('End day input error').css('color' , '#f00');
+			$(this).addClass('error').parent().append('<p class="error">※この項目は必ず入力してください</p>');
 		}
 	})
+	.bind('focus' , function() {
+		if($(this).next() !== false){
+			//要素内全ての「兄弟」要素からclass="error"を削除
+			$(this).removeClass('error').siblings().remove('.error');
+		}
+	});
 });
 
