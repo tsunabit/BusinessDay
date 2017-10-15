@@ -22,7 +22,14 @@ $(function() {
 			//datepickerのminDateオプションを設定
             $('#endDate').datepicker('option', option, selectedDate);
 		}
+	//$('input:visible').eq(0).focus();
+	//$('#startDate').eq(0).focus();
+	
+	
 	});
+	
+	$('input:visible').eq(0).focus();
+	$('#startDate').eq(0).focus();
 
 	//jspの[id=endDate]にJQuery UIのdatepickerを設定
 	$('#endDate').datepicker({
@@ -65,5 +72,9 @@ $(function() {
 			$(this).removeClass('error').siblings().remove('.error');
 		}
 	});
+});
+
+$(function() {
+	
 });
 
