@@ -54,6 +54,26 @@ $(function() {
 			//datepickerのmaxDateオプションを設定
             $('#startDate').datepicker('option', option, selectedDate);
 		}
+	}).on('change', function() {
+		//inputの値が書き換えられた時
+		//ここのセレクタはJQueryで自動に付加されるもの(hasDatepicker)がある。jspには記載していない。
+		if($('input#endDate.hasDatepicker').val() == ''){
+			$(this).addClass('error').parent().append('<p class="error">※この項目は必ず入力してください</p>');
+		}
+	}).bind('blur' , function() {
+		//他にフォーカスが移動した時
+		if(selectedDate == ''){
+			//errorクラスを追加
+			//$(this).addClass('error');
+			//$('form > #endDateError').html('end day input error').css('color' , '#f00');
+			$(this).addClass('error').parent().append('<p class="error">※この項目は必ず入力してください</p>');
+		}
+	}).bind('focus' , function() {
+		//フォーカスが当たった時
+		if($('input#endDate.hasDatepicker').next() !== false){
+			//要素内全ての「兄弟」要素からclass="error"を削除
+			$(this).removeClass('error').siblings().remove('.error');
+		}
 	});
 	
 	function display(msg) {
