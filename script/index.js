@@ -12,6 +12,7 @@ $(function() {
 		changeMonth: true,							//月の変更が可能
 		showOn     : "both",						//テキストボックス、カレンダーアイコンどちらをクリックしてもカレンダー表示
 		buttonImage: 'jsp/img/calendar-icon.png',	//テキストボックス横のボタンの画像
+		//buttonImage: 'jsp/img/calendar-icon2.jpeg',
 		buttonText : "カレンダーから選択",				//ツールチップ表示文言
 		buttonImageOnly: true						//単に画像として表示するか、ボタンとして表示しボタン内に画像を表示させるか
 	});
