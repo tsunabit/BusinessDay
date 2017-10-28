@@ -29,7 +29,7 @@
 <dd><input type=text name=endDate   id=endDate  ></dd><p id='endDateError'></p>
 </dl>
 <input type=submit value=submit>
-<input type=reset  value=reset>
+<input type=reset  value=reset onClick="resetDatepicker()">
 </form>
 
 </body>

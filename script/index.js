@@ -36,6 +36,12 @@ $(function() {
 	});
 });
 
+//resetボタン押下時にdatepickerの入力制限を解除
+function resetDatepicker() {
+	$('#startDate').datepicker('option', 'maxDate', null);
+	$('#endDate').datepicker('option', 'minDate', null);
+};
+
 
 
 //
