@@ -32,5 +32,9 @@
 <input type=reset  value=reset onClick="resetDatepicker()">
 </form>
 
+<p>-----------------------------------</p>
+<p>2016/09/11 開始</p>
+<p>2017/10/29 終了</p>
+
 </body>
 </html>
